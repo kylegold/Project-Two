@@ -1,8 +1,6 @@
-// Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
-
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -10,7 +8,8 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/dashboard");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("index", {layout: "main"});
+    // res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/login", (req, res) => {
@@ -18,12 +17,14 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/dashboard");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login", {layout: "main"});
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/dashboard", isAuthenticated, (req, res) => {
+    // res.render("dashboard", {layout: "main"});
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
@@ -65,25 +66,25 @@ module.exports = function(app) {
   // });
 
 
-  // quiz start
-  app.get("/take-a-quiz/quiz-id/:id/start", isAuthenticated, (req, res) => {
-    res.send("Quiz Start Page");
-  });
+  // // quiz start
+  // app.get("/take-a-quiz/quiz-id/:id/start", isAuthenticated, (req, res) => {
+  //   res.send("Quiz Start Page");
+  // });
 
-  // by author id
-  app.get("/take-a-quiz/user-id", isAuthenticated, (req, res) => {
-    res.send("Search by User ID");
-  });
+  // // by author id
+  // app.get("/take-a-quiz/user-id", isAuthenticated, (req, res) => {
+  //   res.send("Search by User ID");
+  // });
 
-  // by author id
-  app.get("/take-a-quiz/user-id/:id", isAuthenticated, (req, res) => {
-    res.send("Quizzes created by Author [id]");
-  });
+  // // by author id
+  // app.get("/take-a-quiz/user-id/:id", isAuthenticated, (req, res) => {
+  //   res.send("Quizzes created by Author [id]");
+  // });
 
-  // By category
-  app.get("/take-a-quiz/categories", isAuthenticated, (req, res) => {
-    res.send("Search by Categories");
-  });
+  // // By category
+  // app.get("/take-a-quiz/categories", isAuthenticated, (req, res) => {
+  //   res.send("Search by Categories");
+  // });
 
 
 };

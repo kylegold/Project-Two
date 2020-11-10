@@ -22,4 +22,19 @@ Router.post("/", (req, res) => {
     });
 });
 
+Router.post("/:id", (req, res) => {
+  db.Question.create({
+    title: req.body.title,
+    description: req.body.description,
+    UserId: req.body.UserId
+  })
+    .then((dbPost) => {
+      console.log(dbPost);
+      res.json(dbPost);
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
+});
+
 module.exports = Router;
