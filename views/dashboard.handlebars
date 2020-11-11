@@ -1,10 +1,16 @@
 <nav>
-  <ul class="nav nav-pills float-right">
-    <li class="nav-item">
-      <a class="nav-link" href="/api/logout">Logout</a>
-    </li>
-  </ul>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">QUIZZINC</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/api/logout">Logout</a></li>
+    </ul>
+  </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="/api/logout">Logout</a></li>
+</ul>
 
 <header class="dashboard-header text-center">
   <h1>
