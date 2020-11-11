@@ -4,12 +4,16 @@
     <a href="/dashboard" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Dashboard</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/api/logout">Logout</a></li>
     </ul>
   </div>
 </nav>
 
-<ul id="slide-out" class="sidenav">
+
+<ul class="sidenav" id="mobile-demo">
   <li><a href="/dashboard">Dashboard</a></li>
+  <li><a href="/api/logout">Logout</a></li>
+
 </ul>
 
 <header class="dashboard-header center-align">
@@ -19,7 +23,7 @@
 </header>
 
 
-<form class="col s12">
+<form class="col s12" id="quiz-info">
   <div class="row">
     <div class="input-field col s12">
       <input id="quiz_title" type="text" class="validate">
@@ -35,41 +39,42 @@
 </form>
 
 <p class="center-align">
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></a>
+  <a class="btn-floating btn-large waves-effect waves-light red" id="add-question"><i class="material-icons">+</i></a>
   <br>Add a quiz question<br>
 </p>
 
-<form class="col s12">
+<form class="col s12" id="question-info" hidden>
   <div class="row">
     <div class="input-field col s12">
       <input id="quiz_question" type="text" class="validate">
-      <label for="quiz_question">Please enter your question</label>
+      <label for="quiz_question">Question</label>
+    </div>
+  </div>
+
+  <div class="all-options">
+    <div class="row option-info">
+      <div class="input-field col s8">
+        <input id="quiz_answer" type="text" class="validate">
+        <label for="quiz_answer">Choice</label>
+      </div>
+      <div class="input-field col s4">
+        <label>
+          <input type="checkbox" class="filled-in">
+          <span>Check box if answer is correct</span>
+        </label>
+      </div>
     </div>
   </div>
 
   <div class="row">
     <p class="center-align">
-      <a class="waves-effect waves-light btn">Add Answer Choice</a>
+      <a class="btn-floating waves-effect waves-light btn" id="more-option"><i class="material-icons">+</i></a>
     </p>
   </div>
 
-  <div class="row">
-    <div class="input-field col s12">
-      <input id="quiz_answer" type="text" class="validate">
-      <label for="quiz_answer">Please enter choice for answer</label>
-    </div>
-  </div>
-  <div class="row">
-    <label>
-      <p class="center-align">
-        <input type="checkbox" class="filled-in" checked="checked" />
-        <span>Check box if answer is correct</span>
-      </p>
-    </label>
+  <div class="row center-align">
+    <div class="input-field col s12"><input type="submit" id="submit-question" class="waves-effect waves-light btn" value="Add Question"></div>
   </div>
 </form>
-<script>    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-        </script>
+
+<script type="text/javascript" src="/js/create-quiz.js"></script>
