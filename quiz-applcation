@@ -1,0 +1,25 @@
+QUIZ OVERVIEW
+
+Quiz Title: <span>Math Quiz</span>
+Quiz Description: <span>This is a quiz dessccription</span>
+<div class="quizCategories"> Quiz Category Tags</div>
+*Optional*
+Quiz Questions or just # of Questions
+*Stop Optional*
+Star Quiz Button
+
+TAKE THE QUIZ
+<div class="quizContainer">
+<div class="quizQuestion">looping through the quiz questions at each question populate the quiz question of the current index</div>
+<div class="quizChoices">
+loop through the current question options and create a button that contains each choice .. on click check if correct answer otherwise incorrect answer (add correct answer to correct count and incorrect count is questions.length - correct count) .. then .. go to next question in questions loop ... if no more questions then hide quizContainer and show quizEndContainer
+</div>
+ </div>
+
+ <div class="quizEndContainer">
+ <h2> Quiz Complete </h2>
+ <p> Quiz score: <span> ((Questions.length / correctCount) * 100)</span> %
+ <p> Total Questions: <span> Questions.length </span> </p>
+ <p> Correct Answers: <span> correctCount </span> </p>
+  <p> Incorrect Answers: <span> incorrectCount </span> </p>
+  </div>
