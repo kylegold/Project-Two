@@ -25,7 +25,14 @@ Router.get("/login", (req, res) => {
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 Router.get("/dashboard", isAuthenticated, (req, res) => {
   res.render("dashboard", {layout: "main"});
-  // res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+});
+
+Router.get("/create-quiz", isAuthenticated, (req, res) => {
+  res.send("Create A Quiz");
+});
+
+Router.get("/take-a-quiz", isAuthenticated, (req, res) => {
+  res.send("Take A Quiz");
 });
 module.exports = Router;
 // // Create a quiz.. choose between search by quiz id, author id, or category
