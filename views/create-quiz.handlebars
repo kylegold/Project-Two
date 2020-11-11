@@ -1,0 +1,70 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">QUIZZINC</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">Dashboard</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="#">Logout</a></li>
+</ul>
+
+<header class="dashboard-header center-align">
+  <h1>
+    Create A Quiz
+  </h1>
+</header>
+
+
+<form class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="quiz_title" type="text" class="validate">
+      <label for="quiz_title">Quiz Title</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea id="quiz_description" class="materialize-textarea"></textarea>
+      <label for="quiz_description">Quiz Description</label>
+    </div>
+  </div>
+</form>
+
+<p class="center-align">
+  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></a>
+  <br>Add a quiz question<br>
+</p>
+
+<form class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="quiz_question" type="text" class="validate">
+      <label for="quiz_question">Please enter your question</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <p class="center-align">
+      <a class="waves-effect waves-light btn">Add Answer Choice</a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="quiz_answer" type="text" class="validate">
+      <label for="quiz_answer">Please enter choice for answer</label>
+    </div>
+  </div>
+  <div class="row">
+    <label>
+      <p class="center-align">
+        <input type="checkbox" class="filled-in" checked="checked" />
+        <span>Check box if answer is correct</span>
+      </p>
+    </label>
+  </div>
+</form>
