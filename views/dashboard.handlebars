@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">  QUIZZINC</a>
+    <a href="#!" class="brand-logo">QUIZZINC</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/api/logout">Logout</a></li>
@@ -9,10 +9,7 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
-  <li><a href="collapsible.html">Javascript</a></li>
-  <li><a href="mobile.html">Mobile</a></li>
+  <li><a href="/api/logout">Logout</a></li>
 </ul>
 
 <header class="dashboard-header text-center">
@@ -22,11 +19,11 @@
 </header>
 <main class="container">
   <div class="row">
-    <button type="button" class="btn btn-secondary btn-lg btn-block">Create Quiz</button>
+   <a href="/create-quiz"> <button type="button" class="btn btn-secondary btn-lg btn-block">Create Quiz</button></a>
   </div>
   <br><br><br>
   <div class="row">
-    <button type="button" class="btn btn-secondary btn-lg btn-block">Take Quiz</button>
+   <a href="/take-a-quiz"><button type="button" class="btn btn-secondary btn-lg btn-block">Take Quiz</button></a>
   </div>
 </main>
 {{!-- members.js in public folder --}}
