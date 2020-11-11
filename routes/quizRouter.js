@@ -1,12 +1,8 @@
 const Router = require("express").Router();
 const db = require("../models");
 
-// Router.get("/", function(req, res) {
-//   db.Quiz.findAll().then(function(dbPost) {
-//     res.json(dbPost);
-//   });
-// });
 
+// Find All Quizzes
 Router.get("/", function(req, res) {
   db.Quiz.findAll({
     include: [
@@ -22,6 +18,7 @@ Router.get("/", function(req, res) {
   });
 });
 
+// Find One Quiz by Quiz ID
 Router.get("/:id", function(req, res) {
   db.Quiz.findOne({where: {id: req.params.id},
     include: [
@@ -37,19 +34,23 @@ Router.get("/:id", function(req, res) {
   });
 });
 
+// Find All Quizzes by User ID
+Router.get("/user/:UserId", function(req, res) {
+  db.Quiz.findAll({where: {UserId: req.params.UserId},
+    include: [
+      {
+        model: db.Question,
+        include: [
+          db.Option
+        ]
+      }
+    ]
+  }).then(function(dbPost) {
+    res.json(dbPost);
+  });
+});
 
-// Router.get("/questions", function(req, res) {
-//   db.Question.findAll().then(function(dbPost) {
-//     res.json(dbPost);
-//   });
-// });
-
-// Router.get("/options", function(req, res) {
-//   db.Option.findAll().then(function(dbPost) {
-//     res.json(dbPost);
-//   });
-// });
-
+// Create new quiz
 Router.post("/", (req, res) => {
   db.Quiz.create({
     title: req.body.title,
@@ -65,6 +66,7 @@ Router.post("/", (req, res) => {
     });
 });
 
+// Create new quiz question
 Router.post("/new-question", (req, res) => {
   db.Question.create({
     question: req.body.question,
@@ -79,6 +81,7 @@ Router.post("/new-question", (req, res) => {
     });
 });
 
+// Create new quiz question option
 Router.post("/new-choice", (req, res) => {
   db.Option.create({
     choice: req.body.choice,
