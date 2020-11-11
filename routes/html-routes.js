@@ -46,9 +46,10 @@ module.exports = function(app) {
   // //
 
   // // Take a quiz.. choose between search by quiz id, author id, or category
-  // app.get("/take-a-quiz", isAuthenticated, (req, res) => {
-  //   res.send("Search by Quiz ID, USER ID, Category");
-  // });
+  app.get("/takeaquiz", isAuthenticated, (req, res) => {
+    // res.send("Search by Quiz ID, USER ID, Category");
+    res.render("take_a_quiz", { layout: "main" });
+  });
 
   // // By quiz id
   // app.get("/take-a-quiz/quiz-id", isAuthenticated, (req, res) => {
