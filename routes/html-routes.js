@@ -1,6 +1,6 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-
+// const path = require("path");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -24,8 +24,8 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/dashboard", isAuthenticated, (req, res) => {
-    // res.render("dashboard", {layout: "main"});
-    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+    res.render("dashboard", {layout: "main"});
+    // res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
   // // Create a quiz.. choose between search by quiz id, author id, or category
