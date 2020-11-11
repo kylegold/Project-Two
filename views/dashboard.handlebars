@@ -1,10 +1,16 @@
 <nav>
-  <ul class="nav nav-pills float-right">
-    <li class="nav-item">
-      <a class="nav-link" href="/api/logout">Logout</a>
-    </li>
-  </ul>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">QUIZZINC</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/api/logout">Logout</a></li>
+    </ul>
+  </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="/api/logout">Logout</a></li>
+</ul>
 
 <header class="dashboard-header text-center">
   <h1>
@@ -13,20 +19,10 @@
 </header>
 <main class="container">
   <div class="row">
-    <button type="button" class="btn btn-secondary btn-lg btn-block">Create Quiz</button>
+    <a href="/create-quiz"> <button type="button" class="btn btn-secondary btn-lg btn-block">Create Quiz</button></a>
   </div>
   <br><br><br>
   <div class="row">
-    <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="location.href='/takeaquiz'">Take Quiz
-    </button>
-    </button>
-
+    <a href="/take-a-quiz"><button type="button" class="btn btn-secondary btn-lg btn-block">Take Quiz</button></a>
   </div>
 </main>
-{{!-- <a href="/take_a_quiz">here</a> --}}
-{{!-- members.js in public folder --}}
-
-{{!-- <script type="text/javascript" src="../../public/js/members.js"></script> --}}
-
-
-<script type="text/javascript" src="/js/dashboard.js"></script>
