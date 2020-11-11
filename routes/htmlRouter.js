@@ -28,12 +28,13 @@ Router.get("/dashboard", isAuthenticated, (req, res) => {
 });
 
 Router.get("/create-quiz", isAuthenticated, (req, res) => {
-  res.send("Create A Quiz");
+  res.render("create-quiz", {layout: "main"});
 });
 
 Router.get("/take-a-quiz", isAuthenticated, (req, res) => {
-  res.send("Take A Quiz");
+  res.render("take-a-quiz", {layout: "main"});
 });
+
 module.exports = Router;
 // // Create a quiz.. choose between search by quiz id, author id, or category
 // app.get("/create-quiz", isAuthenticated, (req, res) => {

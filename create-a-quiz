@@ -1,0 +1,16 @@
+We have a header with potentially the quiz app logo
+then.
+We have a form to create a Quiz
+this form has two inputs
+input one is for quiz title
+input two is for quiz description
+
+..
+
+We then have a second form to create questions with choices.
+this form is generated when the user clicks the NEW QUESTION button. the Question model has one input. Within each generated question form there is a button to add NEW CHOICE, generating the Option model which has one input and one checkbox (for a boolean isCorrect)
+
+..
+
+Upon submiting the submit button Quiz.title.val() and Quiz.description.val() are used to create a new quiz in the Quiz table. Question.question.val() is used to create a new quiz question. Option.choice.val() is used to create a new option and Option.isCorrect.val() is used to check if option is the correct answer to the question.
+
