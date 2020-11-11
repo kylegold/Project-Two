@@ -1,15 +1,15 @@
 <nav>
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">QUIZZINC</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a href="/dashboard" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Dashboard</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/dashboard">Dashboard</a></li>
     </ul>
   </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
-  <li><a href="#">Logout</a></li>
+<ul id="slide-out" class="sidenav">
+  <li><a href="/dashboard">Dashboard</a></li>
 </ul>
 
 <header class="dashboard-header center-align">
@@ -68,3 +68,8 @@
     </label>
   </div>
 </form>
+<script>    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+        </script>
