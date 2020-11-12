@@ -54,10 +54,10 @@ $(document).ready(() => {
     }
     else {
       // show quiz results.. quizEndContainer
-      $('#quiz-score').text() = ((parseInt(questions.length) / parseInt(correctCount)))
-      $('#quiz-length').text() = (questions.length)
-      $('#quiz-correct-score').text() = (questions.score)
-      $('#quiz-incorrect-score').text() = (questions.length)
+      $('#quiz-score').text(((parseInt(questions.length) / parseInt(correctCount))))
+      $('#quiz-length').text(questions.length)
+      $('#quiz-correct-score').text(questions.score)
+      $('#quiz-incorrect-score').text(questions.length)
     }
   };
   startQuiz()
