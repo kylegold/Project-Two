@@ -19,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     Quiz.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
-      }
+      },
+      onDelete: "cascade"
     });
   };
 
