@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     // Associating Quiz with Questions
     // When an Quiz is deleted, also delete any associated Questions
     Quiz.hasMany(models.Question, {
-      // onDelete: "cascade"
+      onDelete: "cascade"
     });
     Quiz.belongsTo(models.User, {
       foreignKey: {
