@@ -1,0 +1,49 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">QUIZZINC</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Dashboard</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/api/logout">Logout</a></li>
+    </ul>
+  </div>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li><a href="/api/logout">Logout</a></li>
+  </ul>
+</nav>
+
+<main>
+  <header class="center-align">
+    <h1>Start A Quiz</h1>
+  </header>
+  <section>
+    <div class="quiz-container">
+      <div class="quiz-question center-align">
+        <p>
+          looping through the quiz questions at each question populate the quiz question of the current index
+        </p>
+      </div>
+      <div class="quiz-choices center-align">
+        <p>
+          loop through the current question options and create a button that contains each choice .. on click check if correct answer otherwise incorrect answer (add correct answer to correct count and incorrect count is questions.length - correct count) .. then .. go to next question in questions loop ... if no more questions then hide quizContainer and show quizEndContainer
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="quizEndContainer center-align">
+    <h2> Quiz Complete </h2>
+    <p> 
+      Quiz score: <span> ((Questions.length / correctCount) * 100)</span>
+    </p>
+    <p>
+      Total Questions: <span> Questions.length </span>
+    </p>
+    <p>
+      Correct Answers: <span> correctCount </span>
+    </p>
+    <p>
+      Incorrect Answers: <span> incorrectCount </span>
+    </p>
+  </div>
+</main>
