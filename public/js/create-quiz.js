@@ -8,13 +8,13 @@ $(document).ready(() => {
     event.preventDefault();
 
     // Post the quiz only if title is not empty
-    if ($("#quiz_title").val()) {
+    if ($("#quiz_title").val().trim()) {
       // Get user id
       const userData = await $.get("/api/user_data");
       // Post the quiz
       const response = await $.post("/api/quizzes/", {
-        title: $("#quiz_title").val(),
-        description: $("#quiz_description").val(),
+        title: $("#quiz_title").val().trim(),
+        description: $("#quiz_description").val().trim(),
         UserId: userData.id
       });
       // console.log(response);
@@ -60,23 +60,27 @@ $(document).ready(() => {
     event.preventDefault();
 
     // Post only if question is not empty
-    if ($("#quiz_question").val()) {
+    if ($("#quiz_question").val().trim()) {
       // Post the question
       const response = await $.post("/api/quizzes/new-question", {
-        question: $("#quiz_question").val(),
+        question: $("#quiz_question").val().trim(),
         QuizId: newQuizId
       });
+      // Store new question ID
+      const newQuestionId = response.id;
 
-      // Get all the options
-      const options = [];
-      for(let i = 0; i < $(".quiz_answer").length; i++) {
+      // Post all the options
+      // const options = [];
+      for (let i = 0; i < $(".quiz_answer").length; i++) {
         // console.log($($(".quiz_answer")[i]).val() + $($(".answer-isCorrect")[i]).prop("checked"));
-        options.push({
-          choice: $($(".quiz_answer")[i]).val(),
-          isCorrect: $($(".answer-isCorrect")[i]).prop("checked")
+        // options.push({
+        await $.post("/api/quizzes/new-choice", {
+          choice: $($(".quiz_answer")[i]).val().trim(),
+          isCorrect: $($(".answer-isCorrect")[i]).prop("checked"),
+          QuestionId: newQuestionId
         });
       }
-      console.log(options);
+      // console.log(options);
 
       // Hide the form and reset it
       $("#question-info").hide();
