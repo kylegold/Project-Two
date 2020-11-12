@@ -26,19 +26,22 @@
 <form class="col s12" id="quiz-info">
   <div class="row">
     <div class="input-field col s12">
-      <input id="quiz_title" type="text" class="validate">
-      <label for="quiz_title">Quiz Title</label>
+      <input id="quiz_title" type="text" class="validate" placeholder="Quiz Title">
+      {{!-- <label for="quiz_title">Quiz Title</label> --}}
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <textarea id="quiz_description" class="materialize-textarea"></textarea>
-      <label for="quiz_description">Quiz Description</label>
+      <textarea id="quiz_description" class="materialize-textarea" placeholder="Quiz Description"></textarea>
+      {{!-- <label for="quiz_description">Quiz Description</label> --}}
     </div>
+  </div>
+  <div class="row center-align">
+    <div class="input-field col s12"><input type="submit" id="create-quiz" class="waves-effect waves-light btn" value="Create Quiz"></div>
   </div>
 </form>
 
-<p class="center-align">
+<p class="center-align" id="update-quiz" hidden>
   <a class="btn-floating btn-large waves-effect waves-light red" id="add-question"><i class="material-icons">+</i></a>
   <br>Add a quiz question<br>
 </p>
@@ -46,20 +49,20 @@
 <form class="col s12" id="question-info" hidden>
   <div class="row">
     <div class="input-field col s12">
-      <input id="quiz_question" type="text" class="validate">
-      <label for="quiz_question">Question</label>
+      <input id="quiz_question" type="text" class="validate" placeholder="Question">
+      {{!-- <label for="quiz_question">Question</label> --}}
     </div>
   </div>
 
   <div class="all-options">
     <div class="row option-info">
       <div class="input-field col s8">
-        <input id="quiz_answer" type="text" class="validate">
-        <label for="quiz_answer">Choice</label>
+        <input type="text" class="validate quiz_answer" placeholder="Choice">
+        {{!-- <label for="quiz_answer">Choice</label> --}}
       </div>
       <div class="input-field col s4">
         <label>
-          <input type="checkbox" class="filled-in">
+          <input type="checkbox" class="filled-in answer-isCorrect">
           <span>Check box if answer is correct</span>
         </label>
       </div>
