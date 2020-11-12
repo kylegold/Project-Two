@@ -20,6 +20,8 @@ $(document).ready(() => {
       // console.log(response);
       // Store the quiz ID from response
       newQuizId = response.id;
+      // Update the heading to show new quiz id
+      $("header h1").text("Quiz ID: " + newQuizId);
 
       // Disable all input field on this form
       $("#quiz-info input").prop("disabled", true);
