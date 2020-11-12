@@ -76,6 +76,14 @@ $(document).ready(() => {
     // Prevent form submission from refreshing the page
     event.preventDefault();
 
+    // Check all the options to see if any of them is empty
+    for (let i = 0; i < $(".quiz_answer").length; i++) {
+      // If any of the options is empty return early
+      if (!$($(".quiz_answer")[i]).val().trim()) {
+        return;
+      }
+    }
+
     // Post only if question is not empty
     if ($("#quiz_question").val().trim()) {
       // Post the question
