@@ -32,6 +32,15 @@
   padding-left: 16px;
   margin-top: 16px;
 }
+.collectionitem1 {
+    font-family: "Proxima Nova Semibold";
+    border-radius: 58px;
+
+  }
+.dashboard1 {
+    font-family: "Proxima Nova Semibold";
+    font-size: 18px;
+    }
 
 /* Mobile Response */
 @media screen and (max-width: 480px) {
