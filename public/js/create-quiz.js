@@ -37,13 +37,15 @@ $(document).ready(() => {
     $("#add-question").hide();
     // Show the form to add a question
     $("#question-info").show();
+    // Hide less option button
+    $("#less-option").hide();
   });
 
   // When more option button is clicked
   $("#more-option").on("click", function() {
     // console.log($(".option-info"));
     // Clone an option row, making option empty and unchecking by default
-    const tempEl = $(".option-info:first").clone().addClass("cloned");
+    const tempEl = $(".option-info").first().clone().addClass("cloned");
     tempEl.find(".quiz_answer").val("");
     tempEl.find(".answer-isCorrect").prop("checked", false);
     tempEl.appendTo(".all-options");
@@ -52,6 +54,21 @@ $(document).ready(() => {
       // Hide the more options button
       $("#more-option").hide();
     }
+    // Show less option button
+    $("#less-option").show();
+  });
+
+  // When less option button is clicked
+  $("#less-option").on("click", function() {
+    // Remove the last option row
+    $(".option-info").last().remove();
+    // Limit the options to 1
+    if ($(".option-info").length === 1) {
+      // Hide the less options button
+      $("#less-option").hide();
+    }
+    // Show more option button
+    $("#more-option").show();
   });
 
   // When a question form is submitted
