@@ -37,13 +37,15 @@ $(document).ready(() => {
     $("#add-question").hide();
     // Show the form to add a question
     $("#question-info").show();
+    // Hide less option button
+    $("#less-option").hide();
   });
 
   // When more option button is clicked
   $("#more-option").on("click", function() {
     // console.log($(".option-info"));
     // Clone an option row, making option empty and unchecking by default
-    const tempEl = $(".option-info:first").clone().addClass("cloned");
+    const tempEl = $(".option-info").first().clone().addClass("cloned");
     tempEl.find(".quiz_answer").val("");
     tempEl.find(".answer-isCorrect").prop("checked", false);
     tempEl.appendTo(".all-options");
@@ -52,12 +54,35 @@ $(document).ready(() => {
       // Hide the more options button
       $("#more-option").hide();
     }
+    // Show less option button
+    $("#less-option").show();
+  });
+
+  // When less option button is clicked
+  $("#less-option").on("click", function() {
+    // Remove the last option row
+    $(".option-info").last().remove();
+    // Limit the options to 1
+    if ($(".option-info").length === 1) {
+      // Hide the less options button
+      $("#less-option").hide();
+    }
+    // Show more option button
+    $("#more-option").show();
   });
 
   // When a question form is submitted
   $("#question-info").on("submit", async function(event) {
     // Prevent form submission from refreshing the page
     event.preventDefault();
+
+    // Check all the options to see if any of them is empty
+    for (let i = 0; i < $(".quiz_answer").length; i++) {
+      // If any of the options is empty return early
+      if (!$($(".quiz_answer")[i]).val().trim()) {
+        return;
+      }
+    }
 
     // Post only if question is not empty
     if ($("#quiz_question").val().trim()) {
@@ -68,6 +93,8 @@ $(document).ready(() => {
       });
       // Store new question ID
       const newQuestionId = response.id;
+      // Add question to the question views
+      $("<li>").text($("#quiz_question").val().trim()).appendTo("#questions-view");
 
       // Post all the options
       // const options = [];
