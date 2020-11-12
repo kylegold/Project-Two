@@ -20,30 +20,31 @@
   <section>
     <div class="quiz-container">
       <div class="quiz-question center-align">
-        <p>
+        <h3>
           looping through the quiz questions at each question populate the quiz question of the current index
-        </p>
+        </h3>
       </div>
       <div class="quiz-choices center-align">
-        <p>
+        {{!-- <p>
           loop through the current question options and create a button that contains each choice .. on click check if correct answer otherwise incorrect answer (add correct answer to correct count and incorrect count is questions.length - correct count) .. then .. go to next question in questions loop ... if no more questions then hide quizContainer and show quizEndContainer
-        </p>
+        </p> --}}
       </div>
     </div>
   </section>
   <div class="quizEndContainer center-align">
     <h2> Quiz Complete </h2>
     <p> 
-      Quiz score: <span> ((Questions.length / correctCount) * 100)</span>
+      Quiz score: <span id="quiz-score"> ((Questions.length / correctCount) * 100)</span>
     </p>
     <p>
-      Total Questions: <span> Questions.length </span>
+      Total Questions: <span id="quiz-length"> Questions.length </span>
     </p>
     <p>
-      Correct Answers: <span> correctCount </span>
+      Correct Answers: <span id="quiz-correct-score">  correctCount </span>
     </p>
     <p>
-      Incorrect Answers: <span> incorrectCount </span>
+      Incorrect Answers: <span id="quiz-incorrect-score"> incorrectCount </span>
     </p>
   </div>
 </main>
+<script type="text/javascript" src="/js/take-quiz.js"></script>
