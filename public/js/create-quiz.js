@@ -55,29 +55,38 @@ $(document).ready(() => {
   });
 
   // When a question form is submitted
-  $("#question-info").on("submit", function(event) {
+  $("#question-info").on("submit", async function(event) {
     // Prevent form submission from refreshing the page
     event.preventDefault();
 
-    // Get all the options
-    const options = [];
-    for(let i = 0; i < $(".quiz_answer").length; i++) {
-      // console.log($($(".quiz_answer")[i]).val() + $($(".answer-isCorrect")[i]).prop("checked"));
-      options.push({
-        choice: $($(".quiz_answer")[i]).val(),
-        isCorrect: $($(".answer-isCorrect")[i]).prop("checked")
+    // Post only if question is not empty
+    if ($("#quiz_question").val()) {
+      // Post the question
+      const response = await $.post("/api/quizzes/new-question", {
+        question: $("#quiz_question").val(),
+        QuizId: newQuizId
       });
-    }
-    console.log(options);
 
-    // Hide the form and reset it
-    $("#question-info").hide();
-    $("#question-info").trigger("reset");
-    // Remove all cloned elements
-    $(".cloned").remove();
-    // Show the more options button if hidded
-    $("#more-option").show();
-    // Show the button to add more questions
-    $("#add-question").show();
+      // Get all the options
+      const options = [];
+      for(let i = 0; i < $(".quiz_answer").length; i++) {
+        // console.log($($(".quiz_answer")[i]).val() + $($(".answer-isCorrect")[i]).prop("checked"));
+        options.push({
+          choice: $($(".quiz_answer")[i]).val(),
+          isCorrect: $($(".answer-isCorrect")[i]).prop("checked")
+        });
+      }
+      console.log(options);
+
+      // Hide the form and reset it
+      $("#question-info").hide();
+      $("#question-info").trigger("reset");
+      // Remove all cloned elements
+      $(".cloned").remove();
+      // Show the more options button if hidded
+      $("#more-option").show();
+      // Show the button to add more questions
+      $("#add-question").show();
+    }
   });
 });
