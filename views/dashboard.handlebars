@@ -1,6 +1,6 @@
 <nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">QUIZZINC</a>
+  <div class="nav-wrapper nav1">
+    <a href="#!" class="brand-logo">QuizzInc</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/api/logout">Logout</a></li>
@@ -8,24 +8,83 @@
   </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
+<div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
+  <div class="valign" style="width:100%;">
+    <div class="container center-align">
+      <div class="row">
+        <div class="col s6 push-s3">
+          <div class="card cardborder">
+            <div class="card-content">
+              <div class="center-align" style="margin-bottom: 30px;">
+                <span class="simpletitle">Welcome to QuizzInc</span>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <a href="/create-quiz"> <button type="button" style="margin: 0 auto" class="btn btn1">Create
+                      Quiz</button></a>
+                </div>
+                <div class="col s6">
+                  <a href="/take-a-quiz"><button type="button" style="margin: 0 auto" class="btn btn1">Take
+                      Quiz</button></a>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .simpletitle {
+
+    font-family: "Amino Medium";
+    color: #26a69a;
+    font-size: 34px;
+    margin-bottom: 200px;
+
+  }
+
+  .btn1 {
+    background-color: rgb(252, 129, 113);
+    border-radius: 58px;
+    font-family: "Proxima Nova Semibold";
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+  }
+
+  .cardborder {
+    border-radius: 58px;
+
+  }
+
+  .nav1 {
+    background-color: rgb(252, 129, 113);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <ul class="sidenav" id="mobile-demo">
   <li><a href="/api/logout">Logout</a></li>
-</ul>
-
+</ul> --}}
+{{!-- 
 <header class="dashboard-header text-center">
-  <h1 class="center-align">
-    QUIZZINC Dashboard
-  </h1>
-</header>
-<main class="container">
 
-  <div class="row">
-    <a href="/create-quiz"> <button type="button" style="margin: 0 auto"
-        class="btn btn-secondary btn-lg btn-block">Create Quiz</button></a>
-  </div>
-  <br><br><br>
-  <div class="row">
-    <a href="/take-a-quiz"><button type="button" style="margin: 0 auto" class="btn btn-secondary btn-lg btn-block">Take
-        Quiz</button></a>
-  </div>
-</main>
+</header> --}}
