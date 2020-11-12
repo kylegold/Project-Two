@@ -1,5 +1,36 @@
 // When document is ready
 $(document).ready(() => {
+  // Variable to store new quiz ID once its created
+  let newQuizId;
+  // When quiz is created
+  $("#quiz-info").on("submit", async function(event) {
+    // Prevent form submission from refreshing the page
+    event.preventDefault();
+
+    // Post the quiz only if title is not empty
+    if ($("#quiz_title").val()) {
+      // Get user id
+      const userData = await $.get("/api/user_data");
+      // Post the quiz
+      const response = await $.post("/api/quizzes/", {
+        title: $("#quiz_title").val(),
+        description: $("#quiz_description").val(),
+        UserId: userData.id
+      });
+      // console.log(response);
+      // Store the quiz ID from response
+      newQuizId = response.id;
+
+      // Disable all input field on this form
+      $("#quiz-info input").prop("disabled", true);
+      $("#quiz-info textarea").prop("disabled", true);
+      // Remove create quiz button
+      $("#create-quiz").remove();
+      // Show the button to add question
+      $("#update-quiz").show();
+    }
+  });
+
   // When add a question button is clicked
   $("#add-question").on("click", function() {
     // Hide the button
