@@ -1,0 +1,56 @@
+.simpletitle {
+  font-family: "Amino Medium";
+  color: #26a69a;
+  font-size: 34px;
+  margin-bottom: 200px;
+}
+
+.btn1 {
+  background-color: rgb(252, 129, 113);
+  border-radius: 58px;
+  font-family: "Proxima Nova Semibold";
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+.cardborder {
+  border-radius: 58px;
+}
+
+.nav1 {
+  background-color: rgb(252, 129, 113) !important;
+  font-family: "Proxima Nova Semibold";
+}
+
+.log1 {
+  font-family: "Proxima Nova Semibold";
+  font-size: 20px;
+}
+
+.orlogin {
+  color: #26a69a;
+  padding-left: 16px;
+  margin-top: 16px;
+}
+
+/* Mobile Response */
+@media screen and (max-width: 480px) {
+  
+  .signup-container {
+    width: 100%;
+  }
+
+  .simpletitle {
+    font-size: large;
+  }
+
+  .btn1 {
+    width: initial;
+  }
+
+  .orlogin {
+    width: max-content;
+    font-size: small;
+    padding: initial;
+  }
+}
