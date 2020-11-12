@@ -97,4 +97,29 @@ Router.post("/new-choice", (req, res) => {
     });
 });
 
+// Delete quiz question
+Router.delete("/delete-question", (req, res) => {
+  db.Question.destroy({ where: {id: req.body.id}})
+    .then((dbPost) => {
+      console.log(dbPost);
+      res.status(200).end();
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
+});
+
+// Delete quiz question option
+Router.delete("/delete-choice", (req, res) => {
+  db.Option.destroy({ where: {id: req.body.id}})
+    .then((dbPost) => {
+      console.log(dbPost);
+      res.status(200).end();
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
+});
+
+
 module.exports = Router;

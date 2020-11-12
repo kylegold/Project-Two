@@ -13,13 +13,12 @@ module.exports = function(sequelize, DataTypes) {
     // Associating Question with Choices
     // When an Question is deleted, also delete any associated Choices
     Question.hasMany(models.Option, {
-      // onDelete: "cascade"
+      onDelete: "cascade"
     });
     Question.belongsTo(models.Quiz, {
       foreignKey: {
         allowNull: false
-      },
-      onDelete: "cascade"
+      }
     });
   };
 
