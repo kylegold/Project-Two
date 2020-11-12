@@ -35,6 +35,22 @@ Router.get("/take-a-quiz", isAuthenticated, (req, res) => {
   res.render("take-a-quiz", {layout: "main"});
 });
 
+Router.get("/take-a-quiz/search-quiz-id", isAuthenticated, (req, res) => {
+  res.render("quiz-id-search", {layout: "main"});
+});
+
+Router.get("/take-a-quiz/search-user-id", isAuthenticated, (req, res) => {
+  res.render("user-id-search", {layout: "main"});
+});
+
+Router.get("/take-a-quiz/quiz-overview", isAuthenticated, (req, res) => {
+  res.render("quiz-overview", {layout: "main"});
+});
+
+Router.get("/take-a-quiz/start-quiz", isAuthenticated, (req, res) => {
+  res.render("start-the-quiz", {layout: "main"});
+});
+
 module.exports = Router;
 // // Create a quiz.. choose between search by quiz id, author id, or category
 // app.get("/create-quiz", isAuthenticated, (req, res) => {

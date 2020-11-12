@@ -7,7 +7,7 @@ Router.use("/", passportRouter);
 
 Router.use("/quizzes", quizRouter);
 
-Router.use("/quiz-web", quizWebApiRouter);
+Router.use("/quiz-web-api", quizWebApiRouter);
 
 
 module.exports = Router;

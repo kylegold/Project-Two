@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kylegold/Project-Two#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
