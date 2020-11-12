@@ -93,6 +93,8 @@ $(document).ready(() => {
       });
       // Store new question ID
       const newQuestionId = response.id;
+      // Add question to the question views
+      $("<li>").text($("#quiz_question").val().trim()).appendTo("#questions-view");
 
       // Post all the options
       // const options = [];
