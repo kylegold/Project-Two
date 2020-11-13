@@ -14,16 +14,20 @@ async function populateQuizList(){
     for(var index=0; index<quizList.length; index= index+1){
         var quiz = quizList[index]; 
         var url = "/take-a-quiz/quiz-overview/"
-        var li = '<a href="#" class="collection-item" value="'+quiz.id+'">'+ quiz.title + ' | id: #' + quiz.id +'</a>'
-        console.log(quiz.id)
+        var li = '<a href="'+url+'" class="collection-item" value="'+quiz.id+'">'+ quiz.title + ' | id: #' + quiz.id +'</a>'
+        console.log($(li).val(quiz.id))
         collection.append(li); 
     }
     // '<a href="'+ url +'
     $(".collection-item").on("click", (event) => {
         console.log((event.target.getAttribute("value")))
-        // if(!sessionStorage.getItem('quizId')){
-        //     sessionStorage.getItem('quizId')
-        // }
+        if(!sessionStorage.getItem('quizId')){
+            sessionStorage.setItem('quizId', event.target.getAttribute("value"))
+        }
+        else{
+            sessionStorage.removeItem('quizId')
+            sessionStorage.setItem('quizId', event.target.getAttribute("value"))
+        }
     })
     
 
