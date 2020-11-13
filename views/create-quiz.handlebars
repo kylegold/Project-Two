@@ -66,9 +66,6 @@
 <div class="row">
   <ol id="questions-view">
   </ol>
-  <div class="row center-align submit-quiz" hidden>
-    <button class="btn waves-effect waves-light center-align" id="submit-quiz">Submit Quiz</button>
-  </div>
 </div>
 
   <p class="center-align" id="update-quiz" hidden>
@@ -79,12 +76,16 @@
   </p>
 </div>
 
+<div class="row center-align submit-quiz" hidden>
+    <button class="btn btn2 waves-effect waves-light center-align" id="submit-quiz">Submit Quiz</button>
+  </div>
+
 <div class="container center-align">
   <div class="row">
     <div class="col s12 m12 l12">
       <div class="card" id="question-info" hidden>
         <div class="card-content">
-          <form class="">
+          <form class="" id="question-info-form">
             <div class="row">
               <div class="input-field col s12">
                 <input id="quiz_question" type="text" class="validate" placeholder="Question">
