@@ -49,6 +49,8 @@ $(document).ready(() => {
     $("#question-info").show();
     // Hide less option button
     $("#less-option").hide();
+    // Hide the button to submit the quiz
+    $(".submit-quiz").hide();
   });
 
   // When more option button is clicked
@@ -128,6 +130,14 @@ $(document).ready(() => {
       $("#more-option").show();
       // Show the button to add more questions
       $("#add-question").show();
+      // Show the button to submit the quiz
+      $(".submit-quiz").show();
     }
+  });
+
+  // When submit quiz button is clicked
+  $("#submit-quiz").on("click", function() {
+    // Redirect back to dashboard page
+    location.replace("/dashboard/");
   });
 });
