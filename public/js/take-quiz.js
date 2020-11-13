@@ -9,7 +9,8 @@ $(document).ready(() => {
     // event.preventDefault();
     // Using Quiz ID loop through the quiz questions
     $('.quizEndContainer').hide();
-    const quiz = await $.get("/api/quizzes/1");
+    const quizId = sessionStorage.getItem('quizId')
+    const quiz = await $.get("/api/quizzes/" + quizId);
     console.log(quiz)
     $('h1').text(quiz.title)
     // Questions array
