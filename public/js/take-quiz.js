@@ -29,8 +29,8 @@ $(document).ready(() => {
         // create new button element
         // add choice-button class
         let newEl = document.createElement('button')
-        $(newEl).attr("class", "choice-button");
-        // // add option text to button text
+        $(newEl).attr("class", "choice-button btn btn3");
+        // // add option text to button texts
         $(newEl).text(option.choice).attr('value', option.choice)
         // // place element inside quiz-choices div
         $('.quiz-choices').append(newEl)

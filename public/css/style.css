@@ -8,11 +8,26 @@
   color: #8985df;
   font-size: 34px;
 }
+.resultstitle {
+  font-family: "Amino Medium";
+  color: #26a69a;
+  font-size: 34px;
+}
+.resultsresults {
+  font-family: "Amino Medium";
+  color: #2ebdae;
+  font-size: 24px;
+}
 .hiddensubtitle {
   font-family: "Amino Medium";
   color: #26a69a;
   font-size: 24px;
   margin-top:5px ;
+}
+.starttitle {
+  font-family: "Amino Medium";
+  color: #26a69a;
+  font-size: 64px;
 }
 
 .btn1 {
@@ -28,6 +43,16 @@
   font-family: "Proxima Nova Semibold";
   font-size: 18px;
   color: rgb(247, 239, 239);
+}
+.btn3 {
+  background-color: rgb(195, 121, 226);
+  font-family: "Proxima Nova Semibold";
+  font-size: 18px;
+  color: rgb(247, 239, 239);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px ;
+  margin-right: 12px;
 }
 
 .cardborder {
