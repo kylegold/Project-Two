@@ -123,7 +123,7 @@ $(document).ready(() => {
 
       // Hide the form and reset it
       $("#question-info").hide();
-      $("#question-info").trigger("reset");
+      $("#question-info-form").trigger("reset");
       // Remove all cloned elements
       $(".cloned").remove();
       // Show the more options button if hidded
