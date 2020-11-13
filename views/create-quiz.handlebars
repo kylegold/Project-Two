@@ -24,7 +24,7 @@
 
 <div class="container center-align">
   <div class="row">
-    <div class="col s6 push-s3">
+    <div class="col s8 push-s2">
       <div class="card">
         <div class="card-content">
           <form class="" id="quiz-info">
@@ -65,45 +65,54 @@
       Question</a>
   </p>
 </div>
-{{!-- <p class="center-align" id="update-quiz" hidden>
-  <a class="btn-floating btn-large waves-effect waves-light red" id="add-question"><i class="material-icons">+</i></a>
-  <br>Add a quiz question<br>
-</p> --}}
 
-<form class="col s12" id="question-info" hidden>
+<div class="container center-align">
   <div class="row">
-    <div class="input-field col s12">
-      <input id="quiz_question" type="text" class="validate" placeholder="Question">
-      {{!-- <label for="quiz_question">Question</label> --}}
+    <div class="col s8 push-s2">
+      <div class="card" id="question-info" hidden>
+        <div class="card-content">
+          <form class="">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="quiz_question" type="text" class="validate" placeholder="Question">
+
+              </div>
+            </div>
+
+            <div class="all-options">
+              <div class="row option-info">
+                <div class="input-field col s8">
+                  <input type="text" class="validate quiz_answer" placeholder="Choice">
+
+                </div>
+                <div class="input-field col s4">
+                  <label>
+                    <input type="radio" class="filled-in answer-isCorrect" name="is-correct" checked="checked">
+                    <span> Correct Answer</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <p class="center-align">
+                <a class="btn-floating waves-effect waves-light btn red lighten-1" id="less-option"><i
+                    class="material-icons">remove_circle_outline</i></a>
+                <a class="btn-floating waves-effect waves-light btn teal lighten-1" id="more-option"><i
+                    class="material-icons">add_circle_outline</i></a>
+              </p>
+            </div>
+
+            <div class="row center-align">
+
+              <a class="input-field col s12">
+                <input type="submit" id="submit-question" class="btn btn2" value="Add Question">
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="all-options">
-    <div class="row option-info">
-      <div class="input-field col s8">
-        <input type="text" class="validate quiz_answer" placeholder="Choice">
-        {{!-- <label for="quiz_answer">Choice</label> --}}
-      </div>
-      <div class="input-field col s4">
-        <label>
-          <input type="radio" class="filled-in answer-isCorrect" name="is-correct" checked="checked">
-          <span>Check box if answer is correct</span>
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <p class="center-align">
-      <a class="btn-floating waves-effect waves-light btn red" id="less-option"><i class="material-icons">-</i></a>
-      <a class="btn-floating waves-effect waves-light btn" id="more-option"><i class="material-icons">+</i></a>
-    </p>
-  </div>
-
-  <div class="row center-align">
-    <div class="input-field col s12"><input type="submit" id="submit-question" class="waves-effect waves-light btn"
-        value="Add Question"></div>
-  </div>
-</form>
-
+</div>
 <script type="text/javascript" src="/js/create-quiz.js"></script>
