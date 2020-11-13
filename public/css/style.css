@@ -35,6 +35,16 @@
   font-size: 18px;
   color: rgb(247, 239, 239);
 }
+.btn3 {
+  background-color: rgb(90, 184, 151);
+  font-family: "Proxima Nova Semibold";
+  font-size: 18px;
+  color: rgb(247, 239, 239);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px ;
+  margin-right: 12px;
+}
 
 .cardborder {
   border-radius: 58px;
