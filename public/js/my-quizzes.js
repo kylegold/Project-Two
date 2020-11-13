@@ -20,7 +20,7 @@ async function populateQuizList(){
     }
     // '<a href="'+ url +'
     $(".collection-item").on("click", (event) => {
-        console.log($(event.target.getatrribute("value")))
+        console.log((event.target.getAttribute("value")))
         // if(!sessionStorage.getItem('quizId')){
         //     sessionStorage.getItem('quizId')
         // }
