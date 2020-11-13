@@ -1,11 +1,15 @@
 // When document is ready
 $(document).ready(() => {
   // Variable to store new quiz ID once its created
+  let newTitle = ""; 
+  let newDescription = "";
   let newQuizId;
   // When quiz is created
   $("#quiz-info").on("submit", async function(event) {
     // Prevent form submission from refreshing the page
     event.preventDefault();
+    newTitle = $("#quiz_title").val().trim();
+    newDescription = $("#quiz_description").val().trim();
 
     // Post the quiz only if title is not empty
     if ($("#quiz_title").val().trim()) {
@@ -22,6 +26,10 @@ $(document).ready(() => {
       newQuizId = response.id;
       // Update the heading to show new quiz id
       $("header h1").text("Quiz ID: " + newQuizId);
+      $("#quiz_title_h5").text(newTitle);
+      $("#quiz_description_p").text(newDescription);
+      $("#create_quiz_card").hide(); 
+      $("#quiz_information").show();
 
       // Disable all input field on this form
       $("#quiz-info input").prop("disabled", true);

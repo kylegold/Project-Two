@@ -1,79 +1,127 @@
-<nav class="nav-wrapper nav1 nav-properties">
-  <a class="brand-logo left">QuizzInc</a>
-    <ul class="right">
-        <li><a href="/dashboard" class="dashboard1">Dashboard</a></li>
-        <li><a href="/api/logout" class="log1">Logout</a></li>
+<nav>
+  <div class="nav-wrapper nav1">
+    <a href="#" class="brand-logo">QuizzInc</a>
+    <a href="/dashboard" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Dashboard</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/dashboard" class="dashboard1">Dashboard</a></li>
+      <li><a href="/api/logout" class="log1">Logout</a></li>
     </ul>
+  </div>
 </nav>
 
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="/dashboard">Dashboard</a></li>
+  <li><a href="/api/logout">Logout</a></li>
+
+</ul>
+
 <header class="dashboard-header center-align">
-  <h1 class="simpletitle">
+
+  <h1 class="simpletitle" style="margin-bottom: 30px;">
     Create A Quiz
   </h1>
+
 </header>
 
-
-<form class="col s12" id="quiz-info">
-  <div class="row">
-    <div class="input-field col s12">
-      <input id="quiz_title" type="text" class="validate" placeholder="Quiz Title">
-      {{!-- <label for="quiz_title">Quiz Title</label> --}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      <textarea id="quiz_description" class="materialize-textarea" placeholder="Quiz Description"></textarea>
-      {{!-- <label for="quiz_description">Quiz Description</label> --}}
-    </div>
-  </div>
-  <div class="row center-align" id="create-quiz">
-    <div class="input-field col s12"><input type="submit" class="waves-effect waves-light btn" value="Create Quiz"></div>
-  </div>
-</form>
-
-<div class="row">
-  <ol id="questions-view">
-  </ol>
+<div class="row center-align" id="quiz_information" hidden>
+  <h5 class="hiddentitle" id="quiz_title_h5"> </h5>
+  <p class="hiddensubtitle" id="quiz_description_p"> </p>
 </div>
 
-<p class="center-align" id="update-quiz" hidden>
-  <a class="btn-floating btn-large waves-effect waves-light red" id="add-question"><i class="material-icons">+</i></a>
-  <br>Add a quiz question<br>
-</p>
-
-<form class="col s12" id="question-info" hidden>
+<div class="container center-align" id="create_quiz_card">
   <div class="row">
-    <div class="input-field col s12">
-      <input id="quiz_question" type="text" class="validate" placeholder="Question">
-      {{!-- <label for="quiz_question">Question</label> --}}
+    <div class="col s8 push-s2">
+      <div class="card">
+        <div class="card-content">
+          <form class="" id="quiz-info">
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" class="validate" id="quiz_title" placeholder="Quiz Title">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="quiz_description" class="materialize-textarea" placeholder="Quiz Description"></textarea>
+
+              </div>
+            </div>
+            <div class="row center-align" id="create-quiz">
+              <div class="input-field col s12"><input type="submit" class=" btn btn1" value="Create Quiz">
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="all-options">
-    <div class="row option-info">
-      <div class="input-field col s8">
-        <input type="text" class="validate quiz_answer" placeholder="Choice">
-        {{!-- <label for="quiz_answer">Choice</label> --}}
-      </div>
-      <div class="input-field col s4">
-        <label>
-          <input type="radio" class="filled-in answer-isCorrect" name="is-correct" checked="checked">
-          <span>Check box if answer is correct</span>
-        </label>
+
+<div class="row left-align">
+  <div class="col s7 push-s5">
+    <ol id="questions-view" style="font-size: 18px;">
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+
+  <p class="center-align" id="update-quiz" hidden>
+
+    <a class="btn btn2" id="add-question"><i class="material-icons right">add_circle_outline</i>Add
+      Question</a>
+  </p>
+</div>
+
+<div class="container center-align">
+  <div class="row">
+    <div class="col s8 push-s2">
+      <div class="card" id="question-info" hidden>
+        <div class="card-content">
+          <form class="">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="quiz_question" type="text" class="validate" placeholder="Question">
+
+              </div>
+            </div>
+
+            <div class="all-options">
+              <div class="row option-info">
+                <div class="input-field col s8">
+                  <input type="text" class="validate quiz_answer" placeholder="Choice">
+
+                </div>
+                <div class="input-field col s4">
+                  <label>
+                    <input type="radio" class="filled-in answer-isCorrect" name="is-correct" checked="checked">
+                    <span> Correct Answer</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <p class="center-align">
+                <a class="btn-floating waves-effect waves-light btn red lighten-1" id="less-option"><i
+                    class="material-icons">remove_circle_outline</i></a>
+                <a class="btn-floating waves-effect waves-light btn teal lighten-1" id="more-option"><i
+                    class="material-icons">add_circle_outline</i></a>
+              </p>
+            </div>
+
+            <div class="row center-align">
+
+              <a class="input-field col s12">
+                <input type="submit" id="submit-question" class="btn btn2" value="Add Question">
+              </a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <p class="center-align">
-      <a class="btn-floating waves-effect waves-light btn red" id="less-option"><i class="material-icons">-</i></a>
-      <a class="btn-floating waves-effect waves-light btn" id="more-option"><i class="material-icons">+</i></a>
-    </p>
-  </div>
-
-  <div class="row center-align">
-    <div class="input-field col s12"><input type="submit" id="submit-question" class="waves-effect waves-light btn" value="Add Question"></div>
-  </div>
-</form>
-
+</div>
 <script type="text/javascript" src="/js/create-quiz.js"></script>
