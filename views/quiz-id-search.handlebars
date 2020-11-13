@@ -1,16 +1,9 @@
-<nav>
-  <div class="nav-wrapper nav1">
-    <a href="#" class="brand-logo">QuizzInc</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Dashboard</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/api/logout">Logout</a></li>
+<nav class="nav-wrapper nav1 nav-properties">
+  <a class="brand-logo left">QuizzInc</a>
+    <ul class="right">
+        <li><a href="/dashboard" class="dashboard1">Dashboard</a></li>
+        <li><a href="/api/logout" class="log1">Logout</a></li>
     </ul>
-  </div>
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="/dashboard">Dashboard</a></li>
-    <li><a href="/api/logout">Logout</a></li>
-  </ul>
 </nav>
 
 <div class="valign-wrapper" style="width:100%;height:100%;position: relative;">
@@ -29,14 +22,14 @@
                     <div class="row">
                       <div class="input-field col s6 offset-m3">
                         <i class="material-icons prefix">question_answer</i>
-                        <input id="icon_prefix" type="text" class="validate">
+                        <input id="icon_prefix" type="text" class="validate searchInput">
                         <label for="icon_prefix">Enter Quiz ID</label>
                       </div>
                     </div>
                   </form>
                 </div>
                 <div class="center-align">
-                  <button class="btn btn1 waves-effect waves-light" type="submit" name="action">Submit
+                  <button class="btn btn1 waves-effect waves-light" id="searchQuizId" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
@@ -50,6 +43,7 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="/js/quiz-search.js"></script>
 
 {{!-- to display results  --}}
 

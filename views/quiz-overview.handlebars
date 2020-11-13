@@ -1,16 +1,9 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">QUIZZINC</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Dashboard</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/api/logout">Logout</a></li>
+<nav class="nav-wrapper nav1 nav-properties">
+  <a class="brand-logo left">QuizzInc</a>
+    <ul class="right">
+        <li><a href="/dashboard" class="dashboard1">Dashboard</a></li>
+        <li><a href="/api/logout" class="log1">Logout</a></li>
     </ul>
-  </div>
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="/dashboard">Dashboard</a></li>
-    <li><a href="/api/logout">Logout</a></li>
-  </ul>
 </nav>
 
 <main>
@@ -26,9 +19,9 @@
       <div class="row">
         <h5 class="quiz-description center-align">Quiz Description: <span style="font-size: 75%;">###</span></h5>
       </div>
-      <div class="row">
+      {{!-- <div class="row">
         <h5 class="quiz-catergories center-align">Quiz Categories: <span style="font-size: 75%;">###</span></h5>
-      </div>
+      </div> --}}
       <div class="row">
         <h5 class="quiz-question-number center-align">Number of Questions: <span style="font-size: 75%;">###</span></h5>
       </div> 
@@ -43,4 +36,5 @@
     </div> 
   </section>
 </main>
-<script type="text/javascript" src="/js/take-quiz.js"></script>
+{{!-- <script type="text/javascript" src="/js/take-quiz.js"></script> --}}
+<script type="text/javascript" src="/js/quiz-overview.js"></script>
