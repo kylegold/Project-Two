@@ -9,6 +9,16 @@
   color: #8985df;
   font-size: 34px;
 }
+.resultstitle {
+  font-family: "Amino Medium";
+  color: #26a69a;
+  font-size: 34px;
+}
+.resultsresults {
+  font-family: "Amino Medium";
+  color: #2ebdae;
+  font-size: 24px;
+}
 .hiddensubtitle {
   font-family: "Amino Medium";
   color: #26a69a;
@@ -36,7 +46,7 @@
   color: rgb(247, 239, 239);
 }
 .btn3 {
-  background-color: rgb(90, 184, 151);
+  background-color: rgb(195, 121, 226);
   font-family: "Proxima Nova Semibold";
   font-size: 18px;
   color: rgb(247, 239, 239);
