@@ -22,9 +22,14 @@
   font-family: "Proxima Nova Semibold";
 }
 
+.brand-logo {
+  margin-left: 20px;
+}
+
 .log1 {
   font-family: "Proxima Nova Semibold";
   font-size: 20px;
+  margin-right: 20px;
 }
 
 .orlogin {
@@ -62,8 +67,10 @@
   }
 
   .orlogin {
-    width: max-content;
-    font-size: small;
-    padding: initial;
+    width: initial;
+  }
+
+  .create-button {
+    width: 100%;
   }
 }
