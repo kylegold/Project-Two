@@ -44,6 +44,10 @@ Router.get("/take-a-quiz/search-user-id", isAuthenticated, (req, res) => {
   res.render("user-id-search", {layout: "main"});
 });
 
+Router.get("/take-a-quiz/search-category", isAuthenticated, (req, res) => {
+  console.log(req.user);
+  res.render("type-search", {layout: "main"});
+});
 Router.get("/take-a-quiz/quiz-overview", isAuthenticated, (req, res) => {
   res.render("quiz-overview", {layout: "main"});
 });
@@ -113,9 +117,4 @@ module.exports = Router;
 // app.get("/take-a-quiz/categories", isAuthenticated, (req, res) => {
 //   res.send("Search by Categories");
 // });
-
-
-
-
-
 
