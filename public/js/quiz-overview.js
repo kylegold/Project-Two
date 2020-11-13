@@ -5,8 +5,7 @@ $(document).ready(() => {
   console.log(quizId)
   const quizOverview = async function() {
 
-  var url= window.location.href.split("/"); 
-  var quizId= url[url.length - 1]; 
+
   const quiz = await $.get("/api/quizzes/"+ quizId);
 
   console.log(quiz.title);

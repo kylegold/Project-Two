@@ -51,9 +51,9 @@ Router.get("/take-a-quiz/search-category", isAuthenticated, (req, res) => {
 Router.get("/take-a-quiz/quiz-overview", isAuthenticated, (req, res) => {
   res.render("quiz-overview", {layout: "main"});
 });
-Router.get("/take-a-quiz/quiz-overview/p/:quizId", isAuthenticated, (req, res) => {
-  res.render("quiz-overview", { layout: "main" });
-});
+// Router.get("/take-a-quiz/quiz-overview/p/:quizId", isAuthenticated, (req, res) => {
+//   res.render("quiz-overview", { layout: "main" });
+// });
 
 Router.get("/take-a-quiz/start-quiz", isAuthenticated, (req, res) => {
   res.render("start-the-quiz", {layout: "main"});
