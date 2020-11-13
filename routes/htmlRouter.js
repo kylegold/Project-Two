@@ -40,11 +40,15 @@ Router.get("/take-a-quiz/search-quiz-id", isAuthenticated, (req, res) => {
 });
 
 Router.get("/take-a-quiz/search-user-id", isAuthenticated, (req, res) => {
+  console.log(req.user);
   res.render("user-id-search", {layout: "main"});
 });
 
 Router.get("/take-a-quiz/quiz-overview", isAuthenticated, (req, res) => {
   res.render("quiz-overview", {layout: "main"});
+});
+Router.get("/take-a-quiz/quiz-overview/p/:quizId", isAuthenticated, (req, res) => {
+  res.render("quiz-overview", { layout: "main" });
 });
 
 Router.get("/take-a-quiz/start-quiz", isAuthenticated, (req, res) => {
