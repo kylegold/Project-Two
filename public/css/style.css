@@ -15,6 +15,11 @@
   font-size: 24px;
   margin-top:5px ;
 }
+.starttitle {
+  font-family: "Amino Medium";
+  color: #26a69a;
+  font-size: 64px;
+}
 
 .btn1 {
   background-color: rgb(252, 129, 113);

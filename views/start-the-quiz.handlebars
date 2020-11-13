@@ -1,20 +1,23 @@
 <nav class="nav-wrapper nav1 nav-properties">
   <a class="brand-logo left">QuizzInc</a>
-    <ul class="right">
-        <li><a href="/dashboard" class="dashboard1">Dashboard</a></li>
-        <li><a href="/api/logout" class="log1">Logout</a></li>
-    </ul>
+  <ul class="right">
+    <li><a href="/dashboard" class="dashboard1">Dashboard</a></li>
+    <li><a href="/api/logout" class="log1">Logout</a></li>
+  </ul>
 </nav>
 
 <main>
+
   <header class="center-align">
-    <h1>Start A Quiz</h1>
+    <div class="starttitle">
+      <h1 style="margin-bottom: 30px;"> Start A Quiz</h1>
+    </div>
   </header>
   <section>
     <div class="quiz-container">
       <div class="quiz-question center-align">
-        <h3>
-          looping through the quiz questions at each question populate the quiz question of the current index
+        <h3 class="hiddentitle">
+
         </h3>
       </div>
       <div class="quiz-choices center-align">
@@ -26,14 +29,14 @@
   </section>
   <div class="quizEndContainer center-align">
     <h2> Quiz Complete </h2>
-    <p> 
+    <p>
       Quiz score: <span id="quiz-score"> ((Questions.length / correctCount) * 100)</span>
     </p>
     <p>
       Total Questions: <span id="quiz-length"> Questions.length </span>
     </p>
     <p>
-      Correct Answers: <span id="quiz-correct-score">  correctCount </span>
+      Correct Answers: <span id="quiz-correct-score"> correctCount </span>
     </p>
     <p>
       Incorrect Answers: <span id="quiz-incorrect-score"> incorrectCount </span>
