@@ -10,7 +10,6 @@ $(document).ready(() => {
     console.log(quizId)
     if(quiz) {
       window.location.replace("/take-a-quiz/quiz-overview");
-    
     }
     
     };
