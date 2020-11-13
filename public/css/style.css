@@ -24,12 +24,12 @@
   color: rgb(255, 255, 255);
 }
 .btn2 {
-        background-color: rgb(90, 184, 151);
-        border-radius: 58px;
-        font-family: "Proxima Nova Semibold";
-        font-size: 18px;
-        color: rgb(247, 239, 239);
-    }
+  background-color: rgb(90, 184, 151);
+  border-radius: 58px;
+  font-family: "Proxima Nova Semibold";
+  font-size: 18px;
+  color: rgb(247, 239, 239);
+}
 
 .cardborder {
   border-radius: 58px;
@@ -56,22 +56,16 @@
   margin-top: 16px;
 }
 .collectionitem1 {
-    font-family: "Proxima Nova Semibold";
-    border-radius: 58px;
+  font-family: "Proxima Nova Semibold";
+  border-radius: 58px;
 
-  }
+}
+
 .dashboard1 {
-    font-family: "Proxima Nova Semibold";
-    font-size: 18px;
-    }
+  font-family: "Proxima Nova Semibold";
+  font-size: 18px;
+}
 
-.btn2 {
-        background-color: rgb(90, 184, 151);
-        border-radius: 58px;
-        font-family: "Proxima Nova Semibold";
-        font-size: 18px;
-        color: rgb(247, 239, 239);
-    }
 
 /* Mobile Response */
 @media screen and (max-width: 480px) {
